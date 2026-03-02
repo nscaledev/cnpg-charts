@@ -187,6 +187,7 @@ cluster:
 
   objectStore:
     enabled: false
+    # name: ""
     retentionPolicy: "7d"
     # instanceSidecarConfiguration: {}
     configuration: {}
