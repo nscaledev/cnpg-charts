@@ -186,6 +186,24 @@ cluster:
 
   plugins: []
 
+  objectStore:
+    enabled: false
+    retentionPolicy: "7d"
+    # instanceSidecarConfiguration: {}
+    configuration: {}
+
+  scheduledBackup:
+    enabled: false
+    backupOwnerReference: self
+    immediate: true
+    method: barmanObjectStore
+    # online: true|false
+    # onlineConfiguration: {}
+    # pluginConfiguration: {}
+    schedule: "* * * * * *"
+    # suspend: true
+    # target: ""
+
   # -- Name of the container image, supporting both tags (<image>:<tag>) and digests for deterministic and repeatable deployments:
   # <image>:<tag>@sha256:<digestValue>
   imageName: ""  # Default value depends on type (postgresql/postgis/timescaledb)
