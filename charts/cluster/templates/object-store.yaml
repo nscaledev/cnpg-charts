@@ -3,7 +3,7 @@
 apiVersion: barmancloud.cnpg.io/v1
 kind: ObjectStore
 metadata:
-  name: {{ include "cluster.fullname" . }}-object-store
+  name: {{ .Values.cluster.objectStore.name | default (printf "%s-object-store" (include "cluster.fullname" .)) }}
   namespace: {{ include "cluster.namespace" . }}
 spec:
   retentionPolicy: {{ .Values.cluster.objectStore.retentionPolicy }}
