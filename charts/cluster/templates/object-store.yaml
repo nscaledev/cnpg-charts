@@ -10,5 +10,6 @@ spec:
   {{- if .Values.cluster.objectStore.instanceSidecarConfiguration }}
   {{- toYaml .Values.cluster.objectStore.instanceSidecarConfiguration | nindent 2 }}
   {{- end }}
-  {{- toYaml .Values.cluster.objectStore.configuration | nindent 2 }}
+  configuration:
+    {{- toYaml .Values.cluster.objectStore.configuration | nindent 4 }}
 {{- end }}
