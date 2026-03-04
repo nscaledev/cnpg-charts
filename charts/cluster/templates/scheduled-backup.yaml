@@ -15,10 +15,12 @@ spec:
   online: {{ .Values.cluster.scheduledBackup.online }}
   {{- end }}
   {{- if .Values.cluster.scheduledBackup.onlineConfiguration }}
-  {{- toYaml .Values.cluster.scheduledBackup.onlineConfiguration | nindent 2 }}
+  onlineConfiguration:
+    {{- toYaml .Values.cluster.scheduledBackup.onlineConfiguration | nindent 4 }}
   {{- end }}
   {{- if .Values.cluster.scheduledBackup.pluginConfiguration }}
-  {{- toYaml .Values.cluster.scheduledBackup.pluginConfiguration | nindent 2 }}
+  pluginConfiguration:
+    {{- toYaml .Values.cluster.scheduledBackup.pluginConfiguration | nindent 4 }}
   {{- end }}
   schedule: {{ .Values.cluster.scheduledBackup.schedule }}
   {{- if .Values.cluster.scheduledBackup.suspend }}
