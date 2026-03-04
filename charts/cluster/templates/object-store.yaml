@@ -7,8 +7,9 @@ metadata:
   namespace: {{ include "cluster.namespace" . }}
 spec:
   retentionPolicy: {{ .Values.cluster.objectStore.retentionPolicy }}
-  {{- if .Values.cluster.objectStore.instanceSidecarConfiguration }}
-  {{- toYaml .Values.cluster.objectStore.instanceSidecarConfiguration | nindent 2 }}
+  {{- with .Values.cluster.objectStore.instanceSidecarConfiguration }}
+  instanceSidecarConfiguration:
+    {{- toYaml . | nindent 4 }}
   {{- end }}
   configuration:
     {{- toYaml .Values.cluster.objectStore.configuration | nindent 4 }}
