@@ -267,7 +267,7 @@ cluster:
   # -- Affinity/Anti-affinity rules for Pods.
   # See: https://cloudnative-pg.io/documentation/current/cloudnative-pg.v1/#postgresql-cnpg-io-v1-AffinityConfiguration
   affinity:
-    topologyKey: topology.kubernetes.io/zone
+    topologyKey: kubernetes.io/hostname
 
   # -- Env follows the Env format to pass environment variables to the pods created in the cluster
   env: []
