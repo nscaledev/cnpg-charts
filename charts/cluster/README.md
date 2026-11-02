@@ -200,6 +200,7 @@ Kubernetes: `>=1.29.0-0`
 | cluster.securityContext | object | `{}` | Configure Container Security Context. See: https://cloudnative-pg.io/documentation/preview/security/ |
 | cluster.serviceAccountTemplate | object | `{}` | Configure the metadata of the generated service account |
 | cluster.services | object | `{}` | Customization of service definitions. Please refer to https://cloudnative-pg.io/documentation/current/service_management/ |
+| cluster.smartShutdownTimeout | int | `180` | Seconds to let existing sessions finish during Pod termination before fast shutdown. Set to 0 to skip the smart-shutdown wait; active transactions can be interrupted. |
 | cluster.storage.size | string | `"8Gi"` |  |
 | cluster.storage.storageClass | string | `""` |  |
 | cluster.superuserSecret | string | `""` |  |

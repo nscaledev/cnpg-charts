@@ -261,6 +261,14 @@ cluster:
   # successfully updated: it can be automated (unsupervised - default) or manual (supervised)
   primaryUpdateStrategy: unsupervised
 
+  # @schema
+  # type: integer
+  # minimum: 0
+  # @schema
+  # -- Seconds to let existing sessions finish during Pod termination before fast shutdown.
+  # Set to 0 to skip the smart-shutdown wait; active transactions can be interrupted.
+  smartShutdownTimeout: 180
+
   # -- The instances' log level, one of the following values: error, warning, info (default), debug, trace
   logLevel: "info"
 

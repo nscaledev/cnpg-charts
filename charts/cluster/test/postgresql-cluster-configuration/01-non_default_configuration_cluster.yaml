@@ -1,6 +1,7 @@
 type: postgresql
 mode: standalone
 cluster:
+  smartShutdownTimeout: 0
   instances: 2
   imageName: ghcr.io/cloudnative-pg/crazycustomimage:99.99
   imagePullPolicy: Always
