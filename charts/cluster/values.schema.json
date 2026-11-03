@@ -547,6 +547,12 @@
           "required": [],
           "type": "object"
         },
+        "smartShutdownTimeout": {
+          "default": 180,
+          "description": "Seconds to let existing sessions finish during Pod termination before fast shutdown.\nSet to 0 to skip the smart-shutdown wait; active transactions can be interrupted.",
+          "minimum": 0,
+          "type": "integer"
+        },
         "storage": {
           "properties": {
             "size": {
